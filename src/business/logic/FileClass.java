@@ -1,4 +1,4 @@
-package phase.end.assessment;
+package business.logic;
 
 import java.io.File;
 import java.io.IOException;
@@ -11,10 +11,10 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
-import phase.end.exceptions.DuplicateFileException;
-import phase.end.exceptions.FileNotInDirectoryException;
-import phase.end.exceptions.InvalidInputException;
-import phase.end.interfaces.*;
+import business.interfaces.*;
+import exceptions.DuplicateFileException;
+import exceptions.FileNotInDirectoryException;
+import exceptions.InvalidInputException;
 
 public class FileClass implements FileInterface {
 

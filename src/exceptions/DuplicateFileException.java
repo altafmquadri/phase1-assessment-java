@@ -1,4 +1,4 @@
-package phase.end.exceptions;
+package exceptions;
 
 public class DuplicateFileException extends Exception{
 

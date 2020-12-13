@@ -1,7 +1,7 @@
 package application;
 
-import phase.end.assessment.Menu;
-import phase.end.exceptions.InvalidInputException;
+import business.logic.Menu;
+import exceptions.InvalidInputException;
 
 public class FileStore {
 	public static void main(String[] args) {

@@ -1,9 +1,9 @@
-package phase.end.interfaces;
+package business.interfaces;
 
 import java.io.IOException;
 
-import phase.end.exceptions.DuplicateFileException;
-import phase.end.exceptions.FileNotInDirectoryException;
+import exceptions.DuplicateFileException;
+import exceptions.FileNotInDirectoryException;
 
 public interface FileInterface {
 	public void showFileList();

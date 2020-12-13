@@ -1,6 +1,6 @@
-package phase.end.interfaces;
+package business.interfaces;
 
-import phase.end.exceptions.InvalidInputException;
+import exceptions.InvalidInputException;
 
 public interface MenuInterface {
 	

@@ -1,12 +1,12 @@
-package phase.end.assessment;
+package business.logic;
 
 import java.io.IOException;
 import java.util.Scanner;
 
-import phase.end.exceptions.DuplicateFileException;
-import phase.end.exceptions.FileNotInDirectoryException;
-import phase.end.exceptions.InvalidInputException;
-import phase.end.interfaces.*;
+import business.interfaces.*;
+import exceptions.DuplicateFileException;
+import exceptions.FileNotInDirectoryException;
+import exceptions.InvalidInputException;
 
 public class Menu implements MenuInterface {
 

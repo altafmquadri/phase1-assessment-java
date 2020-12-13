@@ -1,4 +1,4 @@
-package phase.end.exceptions;
+package exceptions;
 
 public class FileNotInDirectoryException extends Exception {
 
