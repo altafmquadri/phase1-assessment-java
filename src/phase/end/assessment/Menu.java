@@ -16,14 +16,14 @@ public class Menu implements MenuInterface {
 		System.out.println("\n\n*******************************************************************");
 		System.out.println("\tWelcome to Company Locker Pvt Ltd...\n\n");
 
-		System.out.println("\tThis program will allow you to safely store your documents"
-				+ "\n\twhich you can later retrieve from anywhere.  Any documents\n"
-				+ "\tthat have outlived their purpose can be deleted.\n\n");
+		System.out.println("\tThis program allows you to safely store your text documents."
+				+ "\n\tYou'll be able to list out your files in alphabetical order,\n"
+				+ "\tand delete any text files that are no longer needed...\n\n");
 
-		System.out.println("\tWould you like to enter the application y/n?");
+		System.out.println("\tWould you like to enter the application Y/N?");
 		System.out.println("*******************************************************************");
-		System.out.println("\t\t\t\t\tdeveloped by Altaf Quadri");
-		System.out.println("\nYour selection:\t");
+		System.out.println("\t\t\t\t\t--developed by Altaf Quadri");
+		System.out.println("\n Please enter your selection:\t");
 
 		String enter = scan.nextLine().toLowerCase();
 
@@ -33,7 +33,7 @@ public class Menu implements MenuInterface {
 			} else if (enter.equals("n")) {
 				System.out.println("Thanks for visiting Company Locker Pvt Ltd...");
 			} else {
-				throw new InvalidInputException("Please a select valid choice");
+				throw new InvalidInputException("Please a select valid choice!");
 			}
 		} catch (InvalidInputException e) {
 			System.err.println(e.getMessage());
@@ -53,29 +53,27 @@ public class Menu implements MenuInterface {
 			System.out.println("\tPlease press (4) to return to main menu\n");
 			System.out.println("*******************************************************************");
 			System.out.println("*******************************************************************");
-			System.out.println("\nYour entry:\t");
+			System.out.println("\nPlease provide your entry:\t");
 			String choice = scan.nextLine();
+			FileClass myFile = new FileClass();
 
 			try {
 
 				if (choice.equals("1")) {
-					FileClass myFile = new FileClass();
 					myFile.showFileList();
 				}
 
 				else if (choice.equals("2")) {
-					FileClass myFile = new FileClass();
 					try {
 						myFile.add();
 					} catch (DuplicateFileException e) {
 						System.err.println(e.getMessage());
 					} catch (IOException e) {
-						System.err.println("You need to input a filename");
+						System.err.println("You need to input a filename!");
 					}
 				}
 
 				else if (choice.equals("3")) {
-					FileClass myFile = new FileClass();
 					try {
 						myFile.remove();
 					} catch (FileNotInDirectoryException e) {
@@ -86,7 +84,7 @@ public class Menu implements MenuInterface {
 				else if (choice.equals("4")) {
 					counter++;
 				} else {
-					throw new InvalidInputException("Please select a choice from 1-4");
+					throw new InvalidInputException("Please select a valid option from 1-4");
 				}
 			} catch (InvalidInputException e) {
 				System.err.println(e.getMessage());
@@ -98,15 +96,6 @@ public class Menu implements MenuInterface {
 		} catch (InvalidInputException e) {
 			System.err.println(e.getMessage());
 			e.printStackTrace();
-		}
-	}
-
-	public static void main(String[] args) {
-		Menu menu = new Menu();
-		try {
-			menu.showMainMenu();
-		} catch (InvalidInputException e) {
-			System.err.println(e.getMessage());
 		}
 	}
 }

@@ -38,7 +38,7 @@ public class FileClass implements FileInterface {
 			System.out.println("The current directory does not contain any files");
 		Collections.sort(fileList, String.CASE_INSENSITIVE_ORDER);
 		System.out.println("###################################################################");
-		System.out.println("Your files:");
+		if (!fileList.isEmpty()) System.out.println("Your files:");
 		System.out.println("-------------------------------------------------------------------");
 		fileList.forEach(file -> System.out.println(file));
 		System.out.println("###################################################################");
@@ -49,7 +49,7 @@ public class FileClass implements FileInterface {
 		System.out.println("*******************************************************************");
 		System.out.println("*******************************************************************");
 		System.out.println("*******************************************************************");
-		System.out.println("\nPlease enter the name of the file you would like to add:");
+		System.out.println("\nPlease enter the name of the text file you would like to add:");
 		
 		
 		String fileName = scan.nextLine();
@@ -66,7 +66,7 @@ public class FileClass implements FileInterface {
 		} catch (InvalidInputException e) {
 			System.err.println(e.getMessage());
 			while (!found) {
-				System.out.println("Please enter a file ending with.txt");
+				System.out.println("Please enter a file ending with (.txt)!");
 				fileName = scan.nextLine();
 				matcher = p.matcher(fileName);
 				found = matcher.matches();
@@ -79,7 +79,7 @@ public class FileClass implements FileInterface {
 			fileList.add(fileName);
 			System.out.println("The " + fileName + " file has successfully been added");
 		} else {
-			throw new DuplicateFileException("This file already exists");
+			throw new DuplicateFileException("This file already exists!");
 		}
 		System.out.println("*******************************************************************");
 		System.out.println("*******************************************************************");
@@ -91,7 +91,7 @@ public class FileClass implements FileInterface {
 		System.out.println("*******************************************************************");
 		System.out.println("*******************************************************************");
 		Scanner scan = new Scanner(System.in);
-		System.out.println("Please enter the name of the file you would like to delete");
+		System.out.println("Please enter the name of the text file you would like to delete:");
 
 		String fileName = scan.nextLine();
 		
@@ -121,7 +121,7 @@ public class FileClass implements FileInterface {
 			System.out.println("The " + fileName + " was deleted!");
 
 		} else {
-			throw new FileNotInDirectoryException("The file is not in the current directory");
+			throw new FileNotInDirectoryException("The file does not exist in the current directory!");
 		}
 		System.out.println("*******************************************************************");
 		System.out.println("*******************************************************************");
